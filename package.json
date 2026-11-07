@@ -1,0 +1,45 @@
+{
+  "name": "live-control",
+  "version": "0.0.0",
+  "private": true,
+  "description": "LIVE CONTROL - live streaming management platform",
+  "packageManager": "pnpm@10.12.1",
+  "engines": {
+    "node": "22.x",
+    "pnpm": "10.12.1"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check:toolchain": "node scripts/check-toolchain.mjs",
+    "check:versions": "node scripts/check-versions.mjs",
+    "check:links": "node scripts/check-workspace-links.mjs",
+    "check:secrets": "node scripts/check-secrets.mjs",
+    "check:env-docs": "node scripts/check-env-docs.mjs",
+    "check:deploy": "node scripts/check-deploy.mjs",
+    "check:ci": "node scripts/check-ci.mjs",
+    "infra:up": "docker compose -f infra/docker/docker-compose.yml --env-file .env up -d",
+    "infra:down": "docker compose -f infra/docker/docker-compose.yml --env-file .env down",
+    "infra:logs": "docker compose -f infra/docker/docker-compose.yml --env-file .env logs -f",
+    "smoke:health": "node scripts/smoke-health.mjs",
+    "smoke:web": "node scripts/smoke-web.mjs",
+    "smoke:docker": "bash scripts/smoke-docker.sh",
+    "verify": "pnpm check:toolchain && pnpm check:versions && pnpm check:links && pnpm check:secrets && pnpm check:env-docs && pnpm check:deploy && pnpm check:ci && pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build",
+    "verify:phase2": "bash scripts/verify-phase2.sh"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "eslint": "^9.20.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "globals": "^15.14.0",
+    "prettier": "^3.5.0",
+    "turbo": "^2.4.0",
+    "typescript": "^5.8.0",
+    "typescript-eslint": "^8.24.0"
+  }
+}

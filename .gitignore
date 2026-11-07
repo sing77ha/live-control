@@ -1,0 +1,56 @@
+# ---- Dependencies & build output ----
+node_modules/
+.pnpm-store/
+dist/
+.next/
+out/
+.turbo/
+coverage/
+*.tsbuildinfo
+.vercel/
+
+# ---- Secrets: never commit these ----
+# Environment files (only *.env.example templates are tracked)
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+# Private keys, certificates bundles and keystores
+*.pem
+*.key
+*.p12
+*.pfx
+*.der
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+id_ecdsa*
+# Credential and service-account files
+credentials.json
+*-credentials.json
+*credentials*.json
+*service-account*.json
+*.secret
+*.secrets
+secrets/
+.secrets/
+# Terraform / infra state can contain secrets
+*.tfstate
+*.tfstate.*
+# Production env files placed inside the repo by mistake
+infra/**/*.env
+
+# ---- Editor / OS ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# ---- Logs ----
+*.log
+npm-debug.log*
+pnpm-debug.log*

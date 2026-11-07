@@ -1,0 +1,25 @@
+{
+  "name": "@live-control/realtime",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Long-running realtime service (VPS): platform connections and WebSocket gateway",
+  "scripts": {
+    "dev": "tsx watch --env-file=.env src/index.ts",
+    "build": "tsup",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@live-control/db": "workspace:*",
+    "@live-control/service-kit": "workspace:*",
+    "@live-control/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.0",
+    "tsup": "^8.4.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.8.0",
+    "vitest": "^3.0.0"
+  }
+}

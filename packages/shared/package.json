@@ -1,0 +1,21 @@
+{
+  "name": "@live-control/shared",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Shared schemas, environment validation and health helpers",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.0.0"
+  }
+}

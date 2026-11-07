@@ -1,0 +1,16 @@
+.git
+node_modules
+**/node_modules
+**/dist
+**/.next
+.turbo
+coverage
+.env
+.env.*
+**/.env
+**/.env.*
+*.pem
+*.key
+secrets/
+docs
+*.md
